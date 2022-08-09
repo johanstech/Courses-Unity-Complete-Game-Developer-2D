@@ -18,11 +18,6 @@ public class Delivery : MonoBehaviour
     _spriteRenderer = GetComponent<SpriteRenderer>();
   }
 
-  void OnCollisionEnter2D(Collision2D other)
-  {
-    Debug.Log("I HAVE COLLIDED!");
-  }
-
   void OnTriggerEnter2D(Collider2D other)
   {
     if (other.tag == "Package" && !_hasPackage)
