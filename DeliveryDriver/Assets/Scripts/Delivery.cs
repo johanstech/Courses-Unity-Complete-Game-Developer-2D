@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Delivery : MonoBehaviour
 {
+  [SerializeField]
+  float destructionDelay = 0.5f;
+
   string _packageMessage = "Package picked up!";
   string _customerMessage = "Package dropped off!";
   bool _hasPackage;
@@ -16,6 +19,7 @@ public class Delivery : MonoBehaviour
     if (other.tag == "Package" && !_hasPackage)
     {
       _hasPackage = true;
+      Destroy(other.gameObject, destructionDelay);
       Debug.Log(_packageMessage);
     }
     
