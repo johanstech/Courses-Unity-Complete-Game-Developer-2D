@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public class Collision : MonoBehaviour
+public class Delivery : MonoBehaviour
 {
+  string _packageMessage = "Package picked up!";
+  string _customerMessage = "Package dropped off!";
+
   void OnCollisionEnter2D(Collision2D other)
   {
     Debug.Log("I HAVE COLLIDED!");
