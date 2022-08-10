@@ -5,6 +5,8 @@ public class CrashDetector : MonoBehaviour
 {
     [SerializeField]
     float reloadDelay = 0.5f;
+    [SerializeField]
+    ParticleSystem bonkEffect;
 
     CircleCollider2D _playerHead;
 
@@ -17,6 +19,7 @@ public class CrashDetector : MonoBehaviour
     {
         if (other.gameObject.tag == "Ground" && _playerHead.IsTouching(other.collider))
         {
+            bonkEffect.Play();
             Invoke("ReloadScene", reloadDelay);
         }
     }
