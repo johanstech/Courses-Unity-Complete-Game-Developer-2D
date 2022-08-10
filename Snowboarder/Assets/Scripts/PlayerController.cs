@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D _rb2d;
     SurfaceEffector2D _se2d;
+    bool _controlsDisabled;
 
     void Start()
     {
@@ -22,8 +23,18 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (_controlsDisabled)
+        {
+            return;
+        }
+        
         Rotate();
         Boost();
+    }
+
+    public void DisableControls()
+    {
+        _controlsDisabled = true;
     }
 
     void Rotate()

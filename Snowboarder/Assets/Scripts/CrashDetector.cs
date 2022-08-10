@@ -11,6 +11,7 @@ public class CrashDetector : MonoBehaviour
     AudioClip crashSfx;
 
     CircleCollider2D _playerHead;
+    bool _crashed;
 
     void Start()
     {
@@ -19,8 +20,15 @@ public class CrashDetector : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        if (_crashed)
+        {
+            return;
+        }
+
         if (other.gameObject.tag == "Ground" && _playerHead.IsTouching(other.collider))
         {
+            _crashed = true;
+            FindObjectOfType<PlayerController>().DisableControls();
             bonkEffect.Play();
             GetComponent<AudioSource>().PlayOneShot(crashSfx);
             Invoke("ReloadScene", reloadDelay);
