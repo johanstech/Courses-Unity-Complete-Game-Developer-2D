@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2445812c9831f469f8c981cc84399f14, type: 3}
   m_Name: Question 1
   m_EditorClassIdentifier: 
-  question: What is a potato?
+  question: A variable can be thought of as what?
   answers:
-  - A food
-  - An animal
-  - A vehicle
-  - A person
+  - Data that goes inside a box
+  - A box that can contain data
+  - Data that can't be changed
+  - Data that can only be used once
+  correctAnswerIndex: 1

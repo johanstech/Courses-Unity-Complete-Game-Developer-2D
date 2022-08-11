@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2445812c9831f469f8c981cc84399f14, type: 3}
-  m_Name: Question 2
+  m_Name: Question 3
   m_EditorClassIdentifier: 
-  question: What is the correct syntax for creating a new integer variable with an
-    initial value of 12?
+  question: Which two words can be used interchangeably?
   answers:
-  - int num = 12;
-  - Int num = "12";
-  - Int num = 12;
-  - int num = "12";
-  correctAnswerIndex: 0
+  - Blueprint & Function
+  - Blueprint & Method
+  - Function & Instance
+  - Function & Method
+  correctAnswerIndex: 3
