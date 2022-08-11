@@ -37,11 +37,11 @@ public class Quiz : MonoBehaviour
 
     QuestionSO _question;
     int _correctAnswerIndex;
-    bool _hasAnsweredEarly;
+    bool _hasAnsweredEarly = true;
     Timer _timer;
     Score _score;
 
-    void Start()
+    void Awake()
     {
         _timer = FindObjectOfType<Timer>();
         _score = FindObjectOfType<Score>();
@@ -54,6 +54,11 @@ public class Quiz : MonoBehaviour
         timerImage.fillAmount = _timer.fillFraction;
         if (_timer.loadNextQuestion)
         {
+            if (progressBar.value == progressBar.maxValue)
+            {
+                isComplete = true;
+            }
+
             _hasAnsweredEarly = false;
             GetNextQuestion();
             _timer.loadNextQuestion = false;
@@ -93,10 +98,6 @@ public class Quiz : MonoBehaviour
             buttonImage.sprite = correctAnswerSprite;
         }
 
-        if (progressBar.value == progressBar.maxValue)
-        {
-            isComplete = true;
-        }
         scoreText.text = $"Score: {_score.CalculateScore()}%";
     }
 
