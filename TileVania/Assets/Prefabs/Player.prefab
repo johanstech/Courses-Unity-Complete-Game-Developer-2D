@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 2440337915833555993}
   - component: {fileID: 2440337915833556007}
   - component: {fileID: 4068219717598932994}
+  - component: {fileID: 7708532271664180525}
   - component: {fileID: 8079750513607814831}
   - component: {fileID: 4786173280910986430}
   - component: {fileID: 226270767717072524}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +97,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 48827229
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -335824382, guid: 47b50645f6cc7954aa2b15871ecf5bf1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -118,13 +119,39 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 2440337915833555992}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 756267d866f384945a105273e364d66c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.025645852, y: -0.067611754}
-  m_Size: {x: 0.48048425, y: 0.8970345}
+  m_Offset: {x: -0.03153515, y: -0.065648764}
+  m_Size: {x: 0.57863426, y: 0.89310855}
   m_Direction: 0
+--- !u!61 &7708532271664180525
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2440337915833555992}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 756267d866f384945a105273e364d66c, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.034251213, y: -0.46742263}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.032258, y: 1.032258}
+    newSize: {x: 1.032258, y: 1.032258}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.46409798, y: 0.097412765}
+  m_EdgeRadius: 0
 --- !u!50 &8079750513607814831
 Rigidbody2D:
   serializedVersion: 4
@@ -140,7 +167,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 6
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -188,5 +215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 101610415945da24692dfe0431e7b5e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 6
-  jumpSpeed: 13
+  runSpeed: 7
+  jumpSpeed: 20
+  climbSpeed: 5

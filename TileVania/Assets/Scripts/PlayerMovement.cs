@@ -4,15 +4,16 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
   [SerializeField]
-  float runSpeed = 6f;
+  float runSpeed = 7f;
   [SerializeField]
-  float jumpSpeed = 13f;
+  float jumpSpeed = 20f;
   [SerializeField]
-  float climbSpeed = 3f;
+  float climbSpeed = 5f;
 
   Rigidbody2D _myRigidbody;
   Animator _myAnimator;
-  CapsuleCollider2D _myCapsuleCollider;
+  CapsuleCollider2D _myBodyCollider;
+  BoxCollider2D _myFeetCollider;
   Vector2 _moveInput;
   float _baseGravityScale;
 
@@ -20,7 +21,8 @@ public class PlayerMovement : MonoBehaviour
   {
     _myRigidbody = GetComponent<Rigidbody2D>();
     _myAnimator = GetComponent<Animator>();
-    _myCapsuleCollider = GetComponent<CapsuleCollider2D>();
+    _myBodyCollider = GetComponent<CapsuleCollider2D>();
+    _myFeetCollider = GetComponent<BoxCollider2D>();
 
     _baseGravityScale = _myRigidbody.gravityScale;
   }
@@ -39,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
   void OnJump(InputValue value)
   {
-    if (!_myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+    if (!_myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
     {
       return;
     }
@@ -71,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
   void ClimbLadder()
   {
-    if (!_myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ladder")))
+    if (!_myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ladder")))
     {
       _myRigidbody.gravityScale = _baseGravityScale;
       _myAnimator.SetBool("isClimbing", false);
