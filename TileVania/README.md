@@ -5,3 +5,4 @@ Some things I've found particularly useful throughout this project, that I'll wa
 |  #  |                                         Concept                                          |
 | :-: | :--------------------------------------------------------------------------------------: |
 | 01  |    Tilemaps, and the incredible Rule tile.    |
+| 02  |    Cinemachine with state-driven cameras.    |
