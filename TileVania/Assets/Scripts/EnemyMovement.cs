@@ -5,7 +5,7 @@ public class EnemyMovement : MonoBehaviour
   [SerializeField]
   float moveSpeed = 1f;
   [SerializeField]
-  float deathDelay = 0.5f;
+  float deathDelay = 0.25f;
 
   Rigidbody2D _myRigidbody;
   bool _isDead;
