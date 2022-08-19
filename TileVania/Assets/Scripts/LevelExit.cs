@@ -9,6 +9,11 @@ public class LevelExit : MonoBehaviour
 
   void OnTriggerEnter2D(Collider2D other)
   {
+    if (other.tag != "Player")
+    {
+      return;
+    }
+
     StartCoroutine(LoadNextLevel());
   }
 
@@ -24,6 +29,7 @@ public class LevelExit : MonoBehaviour
       nextSceneIndex = 0;
     }
 
+    FindObjectOfType<ScenePersist>().ResetScenePersist();
     SceneManager.LoadScene(nextSceneIndex);
   }
 }
