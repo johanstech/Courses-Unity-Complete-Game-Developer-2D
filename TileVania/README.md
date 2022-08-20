@@ -1,6 +1,6 @@
 # TileVania
 
-Some things I've found particularly useful throughout this project, that I'll want to revisit later.
+List of things or concepts utilised in this project that will be useful in the future.
 
 |  #  |                                         Concept                                          |
 | :-: | :--------------------------------------------------------------------------------------: |
