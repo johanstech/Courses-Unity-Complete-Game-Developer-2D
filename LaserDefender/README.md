@@ -6,4 +6,4 @@ List of things or concepts utilised in this project that will be useful in the f
 | :-: | :--------------------------------------------------------------------------------------: | :--------------: |
 | 01  |    Basic pathfinding in Unity (no fancy algorithms)    |   115, 116   |
 
-* At the time of going through this course.
+\* At the time of going through this course.
