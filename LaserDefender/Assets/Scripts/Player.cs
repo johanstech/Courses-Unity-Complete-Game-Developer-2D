@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
   [SerializeField]
   float moveSpeed = 10f;
 
-  // private variables
   Vector2 _minBounds;
   Vector2 _maxBounds;
   Vector2 _rawInput;
