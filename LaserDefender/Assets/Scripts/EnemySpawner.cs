@@ -8,6 +8,8 @@ public class EnemySpawner : MonoBehaviour
   List<WaveConfigSO> waveConfigs;
   [SerializeField]
   float waveDelay = 3f;
+  [SerializeField]
+  bool isLooping;
 
   WaveConfigSO _currentWave;
 
@@ -20,12 +22,15 @@ public class EnemySpawner : MonoBehaviour
 
   IEnumerator SpawnEnemyWaves()
   {
-    foreach (WaveConfigSO wave in waveConfigs)
+    do
     {
-      _currentWave = wave;
-      StartCoroutine(SpawnEnemies());
-      yield return new WaitForSeconds(waveDelay);
-    }
+      foreach (WaveConfigSO wave in waveConfigs)
+      {
+        _currentWave = wave;
+        StartCoroutine(SpawnEnemies());
+        yield return new WaitForSeconds(waveDelay);
+      }
+    } while (isLooping);
   }
 
   IEnumerator SpawnEnemies()
