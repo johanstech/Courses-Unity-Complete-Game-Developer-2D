@@ -94,9 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2931765484804050218}
   - component: {fileID: 8770305973164995616}
-  - component: {fileID: 8770305973164995617}
   - component: {fileID: 2371388338263902677}
   - component: {fileID: 6519452622972434322}
+  - component: {fileID: 8770305973164995617}
   - component: {fileID: -4894419695483928460}
   - component: {fileID: 9033857887852761120}
   m_Layer: 6
@@ -152,23 +152,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &8770305973164995617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8925065324078202283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cf2a2e77c4b5844c813d9a22f76de20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  paddingLeft: 0.5
-  paddingRight: 0.5
-  paddingTop: 5
-  paddingBottom: 2
-  moveSpeed: 10
 --- !u!50 &2371388338263902677
 Rigidbody2D:
   serializedVersion: 4
@@ -206,6 +189,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.042185664}
   serializedVersion: 2
   m_Radius: 0.36440325
+--- !u!114 &8770305973164995617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8925065324078202283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf2a2e77c4b5844c813d9a22f76de20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paddingLeft: 0.5
+  paddingRight: 0.5
+  paddingTop: 5
+  paddingBottom: 2
+  moveSpeed: 10
 --- !u!114 &-4894419695483928460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  explodeEffect: {fileID: 651067536772933716, guid: 73625710d0387cf44aad56f1bf94a208, type: 3}
 --- !u!114 &9033857887852761120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,5 +235,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3898987769225176616, guid: 58aa6c5cad55b394390dc44b543f62b6, type: 3}
   projectileSpeed: 10
   projectileLifetime: 5
-  firingRate: 5
+  baseFiringDelay: 0.2
+  useAI: 0
+  firingDelayVariance: 0
+  minimumFiringDelay: 0.1
   isFiring: 0
