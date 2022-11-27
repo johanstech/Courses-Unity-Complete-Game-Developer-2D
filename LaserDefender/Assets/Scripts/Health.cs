@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
     DamageDealer damageDealer = other.GetComponent<DamageDealer>();
     if (damageDealer)
     {
-      TakeTamage(damageDealer.GetDamage());
+      TakeDamage(damageDealer.GetDamage());
       PlayExplodeEffect();
       _audioPlayer.PlayDamageClip();
       ShakeCamera();
@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
     }
   }
 
-  void TakeTamage(int damage)
+  void TakeDamage(int damage)
   {
     health -= damage;
     if (health <= 0)
