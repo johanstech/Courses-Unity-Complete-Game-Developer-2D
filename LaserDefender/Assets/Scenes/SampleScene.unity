@@ -333,6 +333,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795ee1d9fb3faae4094f7088cf2c1541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootingClip: {fileID: 8300000, guid: c5392e8cbf4e92e48b08b05de0cc6107, type: 3}
+  shootingVolume: 0.15
+  damageClip: {fileID: 8300000, guid: 7206fa62adaab734ab5b0d92431419b2, type: 3}
+  damageVolume: 0.2
 --- !u!4 &1249055792
 Transform:
   m_ObjectHideFlags: 0

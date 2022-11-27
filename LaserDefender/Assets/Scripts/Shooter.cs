@@ -25,6 +25,12 @@ public class Shooter : MonoBehaviour
   public bool isFiring;
 
   Coroutine _firingCoroutine;
+  AudioPlayer _audioPlayer;
+
+  void Awake()
+  {
+    _audioPlayer = FindObjectOfType<AudioPlayer>();
+  }
 
   void Start()
   {
@@ -65,6 +71,7 @@ public class Shooter : MonoBehaviour
       Destroy(instance, projectileLifetime);
       float actualFiringDelay = Random.Range(baseFiringDelay - firingDelayVariance, baseFiringDelay + firingDelayVariance);
       actualFiringDelay = Mathf.Clamp(actualFiringDelay, minimumFiringDelay, float.MaxValue);
+      _audioPlayer.PlayShootingClip();
       yield return new WaitForSeconds(actualFiringDelay);
     }
   }

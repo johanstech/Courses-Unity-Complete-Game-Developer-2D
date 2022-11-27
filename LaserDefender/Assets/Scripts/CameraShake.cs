@@ -29,7 +29,6 @@ public class CameraShake : MonoBehaviour
       elapsedTime += Time.deltaTime;
       yield return new WaitForEndOfFrame();
     }
-
     transform.position = _initialPosition;
   }
 }
