@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
   [SerializeField]
   int health = 50;
   [SerializeField]
-  int score = 50;
+  int score = 10;
   [SerializeField]
   ParticleSystem explodeEffect;
 
