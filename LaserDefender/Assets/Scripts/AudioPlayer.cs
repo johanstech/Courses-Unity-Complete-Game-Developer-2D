@@ -16,7 +16,7 @@ public class AudioPlayer : MonoBehaviour
   [Range(0f, 1f)]
   float damageVolume = 1f;
 
-  static AudioPlayer instance;
+  static AudioPlayer _instance;
 
   void Awake()
   {
@@ -25,14 +25,14 @@ public class AudioPlayer : MonoBehaviour
 
   void ManageSingleton()
   {
-    if (instance != null)
+    if (_instance != null)
     {
       gameObject.SetActive(false);
       Destroy(gameObject);
     }
     else
     {
-      instance = this;
+      _instance = this;
       DontDestroyOnLoad(gameObject);
     }
   }

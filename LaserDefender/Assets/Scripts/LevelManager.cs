@@ -7,16 +7,24 @@ public class LevelManager : MonoBehaviour
   [SerializeField]
   float sceneLoadDelay = 2f;
 
+  ScoreKeeper _scoreKeeper;
+
+  void Awake()
+  {
+    _scoreKeeper = FindObjectOfType<ScoreKeeper>();
+  }
+
   public void QuitGame() => Application.Quit();
 
   public void LoadMainMenu() => SceneManager.LoadScene("MainMenu");
 
-  public void LoadGame() => SceneManager.LoadScene("Game");
-
-  public void LoadGameOver()
+  public void LoadGame()
   {
-    StartCoroutine(WaitAndLoad("GameOver", sceneLoadDelay));
+    _scoreKeeper.ResetScore();
+    SceneManager.LoadScene("Game");
   }
+
+  public void LoadGameOver() => StartCoroutine(WaitAndLoad("GameOver", sceneLoadDelay));
 
   IEnumerator WaitAndLoad(string scene, float delay)
   {
